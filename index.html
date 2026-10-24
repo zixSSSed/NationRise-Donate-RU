@@ -218,6 +218,14 @@ nav.menu a:hover{color:var(--text);background:var(--panel-tint)}
 /* ==================== ПОДВАЛ ==================== */
 footer{border-top:1px solid var(--line2);padding:30px 0;color:var(--muted);font-size:14px}
 .foot-inner{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+.foot-col{display:flex;flex-direction:column;gap:6px;min-width:0;overflow-wrap:anywhere}
+.foot-col b{color:var(--text);font-size:14.5px;margin-bottom:2px}
+.foot-col p{margin:0}
+.foot-copy{margin-top:22px;font-size:12.5px}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+.terms a{color:var(--gold-soft);text-decoration:underline}
 footer a{color:var(--muted)}footer a:hover{color:var(--gold-soft)}
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--card-hi);
   border:1px solid var(--line);color:var(--text);padding:12px 20px;border-radius:12px;font-weight:600;z-index:80;transition:.25s;pointer-events:none;box-shadow:var(--shadow)}
@@ -333,6 +341,7 @@ const LOGO=`<svg class="logo" viewBox="0 0 1400 1400" fill="currentColor"><path 
       <a href="#shop">Магазин</a>
       <a href="https://wiki.nationrise.space" target="_blank" rel="noopener">Вики</a>
       <a href="https://discord.gg/nationrise" target="_blank" rel="noopener">Discord</a>
+      <a href="#contacts">Контакты</a>
     </nav>
     <div class="spacer"></div>
     <div class="status off" id="status" title="Онлайн сервера"><span class="dot"></span><span id="statusText">проверяем…</span></div>
@@ -366,10 +375,26 @@ const LOGO=`<svg class="logo" viewBox="0 0 1400 1400" fill="currentColor"><path 
 </main>
 
 <footer id="how">
-  <div class="container foot-inner">
-    <div>© NationRise · <a href="https://wiki.nationrise.space" target="_blank" rel="noopener">Вики</a> · <a href="https://discord.gg/nationrise" target="_blank" rel="noopener">Discord</a></div>
-    <div>Оплата через TradeMC (карты, СБП). Возврат — по правилам магазина.</div>
+  <div class="container foot-grid">
+    <div class="foot-col">
+      <b>NationRise</b>
+      <p>Оплата картой или через СБП на защищённой странице оплаты. Товар зачисляется на ваш ник автоматически, обычно за несколько минут.</p>
+      <div><a href="https://wiki.nationrise.space" target="_blank" rel="noopener">Вики</a> · <a href="https://discord.gg/nationrise" target="_blank" rel="noopener">Discord</a></div>
+    </div>
+    <div class="foot-col">
+      <b>Покупателям</b>
+      <a href="/oferta">Публичная оферта</a>
+      <a href="/oferta#delivery">Получение товара</a>
+      <a href="/oferta#refund">Возврат денег</a>
+      <a href="/privacy">Персональные данные</a>
+    </div>
+    <div class="foot-col" id="contacts">
+      <b>Контакты</b>
+      <a href="mailto:support@nationrise.space">support@nationrise.space</a>
+      <a href="https://discord.gg/nationrise" target="_blank" rel="noopener">Discord: тикеты</a>
+    </div>
   </div>
+  <div class="container foot-copy">© 2026 NationRise. Не является официальным продуктом Minecraft, не одобрено и не связано с Mojang или Microsoft.</div>
 </footer>
 
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()">
@@ -382,7 +407,7 @@ const LOGO=`<svg class="logo" viewBox="0 0 1400 1400" fill="currentColor"><path 
         <div class="field"><label>Ваш ник в игре</label><input id="nick" placeholder="Steve" autocomplete="off" maxlength="16"></div>
         <div class="field"><label>Ваш Email (для чека)</label><input id="email" type="email" placeholder="you@mail.ru" autocomplete="email"></div>
         <div class="field"><label>Промокод (если есть)</label><input id="promo" placeholder="XXXXX" autocomplete="off"></div>
-        <label class="terms"><input type="checkbox" id="agree"> Принимаю условия соглашения и подтверждаю, что карта принадлежит мне.</label>
+        <label class="terms"><input type="checkbox" id="agree"> <span>Принимаю условия <a href="/oferta" target="_blank" rel="noopener">оферты</a>, соглашаюсь на обработку <a href="/privacy" target="_blank" rel="noopener">персональных данных</a> и подтверждаю, что карта принадлежит мне.</span></label>
         <div class="total"><span>К оплате</span><b class="tnum" id="total">0 ₽</b></div>
         <button class="pay" id="payBtn" onclick="pay()">Оплатить</button>
         <div class="note">Нажимая «Оплатить», вы перейдёте на защищённую страницу оплаты TradeMC.</div>
