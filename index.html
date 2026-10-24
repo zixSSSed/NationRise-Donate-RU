@@ -368,7 +368,7 @@ const LOGO=`<svg class="logo" viewBox="0 0 1400 1400" fill="currentColor"><path 
 <footer id="how">
   <div class="container foot-inner">
     <div>© NationRise · <a href="https://wiki.nationrise.space" target="_blank" rel="noopener">Вики</a> · <a href="https://discord.gg/nationrise" target="_blank" rel="noopener">Discord</a></div>
-    <div>Оплата через Millida. Возврат — по правилам магазина.</div>
+    <div>Оплата через TradeMC (карты, СБП). Возврат — по правилам магазина.</div>
   </div>
 </footer>
 
@@ -385,7 +385,7 @@ const LOGO=`<svg class="logo" viewBox="0 0 1400 1400" fill="currentColor"><path 
         <label class="terms"><input type="checkbox" id="agree"> Принимаю условия соглашения и подтверждаю, что карта принадлежит мне.</label>
         <div class="total"><span>К оплате</span><b class="tnum" id="total">0 ₽</b></div>
         <button class="pay" id="payBtn" onclick="pay()">Оплатить</button>
-        <div class="note">Нажимая «Оплатить», вы перейдёте на защищённую страницу оплаты Millida.</div>
+        <div class="note">Нажимая «Оплатить», вы перейдёте на защищённую страницу оплаты TradeMC.</div>
       </div>
     </div>
   </div>
@@ -435,7 +435,7 @@ const CONFIG={
   },
   // Запасной путь оплаты, если основной домен недоступен: витрина EasyDonate
   // (российский домен, доступен когда наш сайт — нет).
-  SHOP_FALLBACK_URL:"https://nationrise.millida.trade",
+  SHOP_FALLBACK_URL:"https://nationrise.trademc.org",
 };
 
 /* ============================================================
